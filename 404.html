@@ -7,44 +7,52 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0A0C10">
   <meta name="color-scheme" content="dark light">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0C10'/%3E%3Ccircle cx='14' cy='14' r='7.5' fill='none' stroke='%23ECEEF3' stroke-width='2.5'/%3E%3Cpath d='M19.6 19.6 25 25' stroke='%23ECEEF3' stroke-width='2.75' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='14' r='3' fill='%23FF5A1F'/%3E%3C/svg%3E">
+  <style>
+    :root { --bg: #0a0c10; --text: #eceef3; --muted: #a3a9b8; --border: #353d4e; --accent: #ff5a1f; --accent-text: #ff7a45; color-scheme: dark; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fafaf7; --text: #0e1117; --muted: #4a5163; --border: #cfcfc6; --accent-text: #c2410c; color-scheme: light; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--bg); color: var(--text); font: 400 1.0625rem/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { width: 100%; max-width: 560px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 40px; color: var(--text); font-weight: 700; font-size: 1.125rem; text-decoration: none; }
+    .code { margin: 0 0 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; color: var(--accent-text); }
+    h1 { margin: 0 0 12px; font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.15; letter-spacing: -0.02em; }
+    p { margin: 0 0 1em; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 20px; border-radius: 10px; border: 1px solid var(--border); color: var(--text); font-weight: 600; text-decoration: none; }
+    .btn--primary { background: var(--accent); border-color: var(--accent); color: #0a0c10; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    @media (max-width: 480px) { .btn { width: 100%; } }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="brand" href="/" aria-label="Culpritly home">
-        <img src="/assets/img/logo-mark.svg" alt="" width="28" height="28">
-        <span class="brand__name">Culpritly</span>
-      </a>
-    </div>
-  </header>
-
-  <main id="main" class="page notfound">
-    <div class="container container--narrow">
-      <p class="code">404 &middot; page not found</p>
-      <h1>This page is missing</h1>
-      <p>Good news: we know exactly what happened. The link points to a page that does not exist.</p>
-      <div class="hero__ctas">
-        <a class="btn btn--primary" href="/">Go to the home page</a>
-        <a class="btn btn--ghost" href="mailto:hello@culpritly.com">Email hello@culpritly.com</a>
-      </div>
+  <main>
+    <a class="brand home-link" href="/">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1A1F2A"/><circle cx="14" cy="14" r="7.5" fill="none" stroke="#ECEEF3" stroke-width="2.5"/><path d="M19.6 19.6 25 25" stroke="#ECEEF3" stroke-width="2.75" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="#FF5A1F"/></svg>
+      Culpritly
+    </a>
+    <p class="code">404 &middot; page not found</p>
+    <h1>This page is missing</h1>
+    <p>Good news: we know exactly what happened. The link points to a page that does not exist.</p>
+    <div class="actions">
+      <a class="btn btn--primary home-link" href="/">Go to the home page</a>
+      <a class="btn" href="mailto:hello@culpritly.com">Email hello@culpritly.com</a>
     </div>
   </main>
-
-  <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <p class="site-footer__copy">&copy; 2026 Culpritly</p>
-      <ul class="site-footer__links">
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="mailto:hello@culpritly.com">hello@culpritly.com</a></li>
-      </ul>
-    </div>
-  </footer>
+  <script>
+    // Point home links at the site root, whether served from a domain root or a project subpath.
+    (function () {
+      var host = location.hostname;
+      var base = "/";
+      if (!/(^|\.)culpritly\.com$/.test(host) && host !== "localhost") {
+        var first = location.pathname.split("/")[1];
+        if (first) base = "/" + first + "/";
+      }
+      var links = document.querySelectorAll(".home-link");
+      for (var i = 0; i < links.length; i++) links[i].setAttribute("href", base);
+    })();
+  </script>
 </body>
 </html>

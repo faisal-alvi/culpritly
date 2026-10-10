@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Culpritly: find what broke your WooCommerce checkout</title>
-  <meta name="description" content="Culpritly watches every change on your WooCommerce store and the health of your checkout. When payments quietly fail, you get the likely culprit, the revenue lost, and how to undo it.">
+  <title>Culpritly: AI incident analyst for WooCommerce checkout</title>
+  <meta name="description" content="Culpritly is an AI incident analyst for WooCommerce checkout. It spots when payments quietly fail and tells you in plain English what broke, what it cost, and how to fix it.">
   <link rel="canonical" href="https://culpritly.com/">
   <meta name="theme-color" content="#0A0C10">
   <meta name="color-scheme" content="dark light">
@@ -13,21 +13,21 @@
   <meta property="og:site_name" content="Culpritly">
   <meta property="og:url" content="https://culpritly.com/">
   <meta property="og:title" content="Culpritly: something broke your store. Find out what, when, and what it cost.">
-  <meta property="og:description" content="Change tracking and silent checkout breakage detection for WooCommerce stores. One plain-English alert with the likely culprit, the revenue lost, and how to undo it.">
+  <meta property="og:description" content="AI incident analyst for WooCommerce checkout. Culpritly tracks every change, catches silent checkout breakage, and explains in plain English what broke, what it cost, and how to fix it.">
   <meta property="og:image" content="https://culpritly.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Culpritly: Something broke your store. Culpritly tells you what, when, and what it cost.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Culpritly: something broke your store. Find out what, when, and what it cost.">
-  <meta name="twitter:description" content="Change tracking and silent checkout breakage detection for WooCommerce stores.">
+  <meta name="twitter:description" content="AI incident analyst for WooCommerce checkout. Find out what broke, what it cost, and how to fix it.">
   <meta name="twitter:image" content="https://culpritly.com/assets/img/og-image.png">
 
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
   {
@@ -37,7 +37,7 @@
     "url": "https://culpritly.com/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web, WordPress with WooCommerce",
-    "description": "Culpritly records every change on a WooCommerce store and watches checkout health. When checkout breaks, it sends one plain-English alert with what changed, when orders dropped, the likely culprit, the estimated revenue lost, and how to undo it.",
+    "description": "Culpritly is an AI incident analyst for WooCommerce checkout. It records every change on a store and watches checkout health. When checkout breaks, it reads the error, the update's code changes and the store's timeline, then sends one plain-English alert with what changed, when orders dropped, the likely culprit with its evidence, the estimated revenue lost, and how to fix it.",
     "offers": {
       "@type": "Offer",
       "name": "Founding plan",
@@ -60,6 +60,14 @@
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "What does the AI actually do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It explains incidents. When checkout breaks, it reads the error messages, the changelog and code diff of whatever changed, and your store's timeline, then writes a plain-English explanation of the likely cause and suggests a fix. It does not take actions on its own. Every suggestion shows the evidence it is based on, and you approve anything that changes your store."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Does Culpritly slow my site down?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -71,7 +79,7 @@
         "name": "What data does Culpritly collect?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. The privacy page has the details."
+          "text": "Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The privacy page has the details."
         }
       },
       {
@@ -103,7 +111,7 @@
         "name": "How is this different from an activity log or an uptime monitor?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, or which change caused it. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you."
+          "text": "An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, which change caused it, or why. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you, and its AI incident analyst explains the cause in plain English with the evidence. The upcoming update risk check goes one step earlier and flags risky updates before you install them."
         }
       },
       {
@@ -123,8 +131,8 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/" aria-label="Culpritly home">
-        <img src="/assets/img/logo-mark.svg" alt="" width="28" height="28">
+      <a class="brand" href="./" aria-label="Culpritly home">
+        <img src="assets/img/logo-mark.svg" alt="" width="28" height="28">
         <span class="brand__name">Culpritly</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -147,7 +155,7 @@
         <div class="hero__copy">
           <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Early access for WooCommerce stores</p>
           <h1 id="hero-title">Something broke your store. <span class="hero__accent">Culpritly tells you what, when, and what it cost.</span></h1>
-          <p class="lede">Culpritly records every change on your WooCommerce store and watches whether customers can still pay. When checkout quietly breaks, you get one plain-English alert: the likely culprit, the revenue at stake, and how to undo it.</p>
+          <p class="lede">Culpritly records every change on your WooCommerce store and watches whether customers can still pay. When checkout quietly breaks, its AI incident analyst reads the error, the update's code changes and your store's timeline, then tells you in plain English what broke, what it cost, and how to fix it.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
             <a class="btn btn--ghost" href="#how-it-works">See how it works</a>
@@ -191,6 +199,10 @@
             <div class="verdict__item">
               <p class="verdict__label">Estimated lost revenue so far</p>
               <p class="verdict__money">$1,840</p>
+            </div>
+            <div class="verdict__item verdict__item--wide">
+              <p class="verdict__label">AI analysis</p>
+              <p class="verdict__analysis">Version 2.0.3 now loads its checkout script before Stripe's card field is ready, so the field never renders. Roll back to 2.0.2 or update once a fix ships.</p>
             </div>
           </div>
 
@@ -269,7 +281,7 @@
           <li class="step">
             <span class="step__num" aria-hidden="true">03</span>
             <h3>You get one clear alert</h3>
-            <p>When something breaks, you get a single plain-English alert: what changed, when orders dropped, the likely culprit, the estimated revenue lost, and how to undo it.</p>
+            <p>When something breaks, Culpritly's AI incident analyst writes you a single plain-English alert: what changed, when orders dropped, the likely culprit and the evidence for it, the estimated revenue lost, and how to fix it.</p>
             <p class="step__note">You stay in control. Nothing is rolled back without your OK.</p>
           </li>
         </ol>
@@ -284,6 +296,23 @@
           <h2 id="features-title">Built to answer one question fast: what broke checkout?</h2>
         </div>
         <ul class="features">
+          <li class="feature feature--lead">
+            <div class="feature__body">
+              <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>
+              <h3>AI incident analyst</h3>
+              <p>When checkout breaks, the analyst reads the stack trace and error message, the changelog and the code diff between the old and new plugin versions (public on WordPress.org), and your store's change timeline. Then it explains why checkout broke and how to fix it.</p>
+              <p class="feature__note">It always shows a likely cause together with the evidence behind it, never a guess presented as fact.</p>
+            </div>
+            <div class="evidence" aria-label="What the analyst reads, in this example">
+              <p class="evidence__label">What it reads <span>(example)</span></p>
+              <ul class="evidence__list">
+                <li><span class="evidence__kind">Error</span>TypeError on /checkout/ in tracking.js</li>
+                <li><span class="evidence__kind">Changelog</span>2.0.3: "Load checkout script earlier"</li>
+                <li><span class="evidence__kind">Diff</span>2.0.2 &rarr; 2.0.3, checkout script enqueue moved</li>
+                <li><span class="evidence__kind">Timeline</span>Updated 03:04, orders stopped 03:10</li>
+              </ul>
+            </div>
+          </li>
           <li class="feature">
             <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/><circle cx="19" cy="12" r="2"/></svg>
             <h3>Change timeline</h3>
@@ -328,8 +357,48 @@
       </div>
     </section>
 
+    <!-- Coming soon -->
+    <section class="section section--alt" id="coming-soon" aria-labelledby="soon-title">
+      <div class="container">
+        <div class="soon">
+          <div class="soon__copy">
+            <p class="kicker">Update risk check <span class="badge">Coming soon</span></p>
+            <h2 id="soon-title">Warned before it breaks</h2>
+            <p class="soon__lede">The AI update risk check looks at updates before you install them. It reads the changelog and code diff of each pending update and flags the ones that touch checkout, payment gateways or cart scripts, with a risk level for your store. You decide whether to update off-peak or wait.</p>
+            <p class="soon__later"><strong>Later on the roadmap: Ask Culpritly.</strong> Ask questions about your store's timeline in plain English, like "Why did sales drop last Tuesday?"</p>
+          </div>
+
+          <figure class="incident risk" aria-labelledby="risk-caption">
+            <div class="incident__bar">
+              <span class="incident__status">Update risk check</span>
+              <span class="incident__tag">Example</span>
+            </div>
+            <dl class="risk__list">
+              <div class="risk__row">
+                <dt>Pending update</dt>
+                <dd>Checkout Tracking 2.0.3</dd>
+              </div>
+              <div class="risk__row">
+                <dt>Touches</dt>
+                <dd>Checkout scripts, Stripe payment form</dd>
+              </div>
+              <div class="risk__row">
+                <dt>Risk for your store</dt>
+                <dd><span class="risk__level">High</span></dd>
+              </div>
+              <div class="risk__row">
+                <dt>Suggestion</dt>
+                <dd>Update off-peak and watch the first orders.</dd>
+              </div>
+            </dl>
+            <figcaption id="risk-caption" class="incident__caption">Example check with made-up data. This feature is not available yet.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- Who it's for -->
-    <section class="section section--alt" id="who" aria-labelledby="who-title">
+    <section class="section" id="who" aria-labelledby="who-title">
       <div class="container">
         <div class="section__head">
           <p class="kicker">Who it's for</p>
@@ -442,12 +511,16 @@
         </div>
         <div class="faq">
           <details>
+            <summary><h3>What does the AI actually do?</h3></summary>
+            <p>It explains incidents. When checkout breaks, it reads the error messages, the changelog and code diff of whatever changed, and your store's timeline, then writes a plain-English explanation of the likely cause and suggests a fix. It does not take actions on its own. Every suggestion shows the evidence it is based on, and you approve anything that changes your store.</p>
+          </details>
+          <details>
             <summary><h3>Does Culpritly slow my site down?</h3></summary>
             <p>It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your store except a tiny error listener on the checkout page, so Culpritly can see the JavaScript errors your customers run into.</p>
           </details>
           <details>
             <summary><h3>What data does Culpritly collect?</h3></summary>
-            <p>Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. The <a href="/privacy.html">privacy page</a> has the details.</p>
+            <p>Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The <a href="privacy.html">privacy page</a> has the details.</p>
           </details>
           <details>
             <summary><h3>Will Culpritly roll things back automatically?</h3></summary>
@@ -463,7 +536,7 @@
           </details>
           <details>
             <summary><h3>How is this different from an activity log or an uptime monitor?</h3></summary>
-            <p>An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, or which change caused it. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you.</p>
+            <p>An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, which change caused it, or why. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you, and its AI incident analyst explains the cause in plain English with the evidence. The upcoming update risk check goes one step earlier and flags risky updates before you install them.</p>
           </details>
           <details>
             <summary><h3>Is Culpritly ready today?</h3></summary>
@@ -488,13 +561,13 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <a class="brand brand--footer" href="/" aria-label="Culpritly home">
-        <img src="/assets/img/logo-mark.svg" alt="" width="24" height="24">
+      <a class="brand brand--footer" href="./" aria-label="Culpritly home">
+        <img src="assets/img/logo-mark.svg" alt="" width="24" height="24">
         <span class="brand__name">Culpritly</span>
       </a>
       <p class="site-footer__copy">&copy; 2026 Culpritly</p>
       <ul class="site-footer__links">
-        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
         <li><a href="mailto:hello@culpritly.com">hello@culpritly.com</a></li>
       </ul>
     </div>
