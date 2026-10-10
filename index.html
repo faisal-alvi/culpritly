@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Culpritly: AI incident analyst for WooCommerce checkout</title>
-  <meta name="description" content="Culpritly is an AI incident analyst for WooCommerce checkout. It spots when payments quietly fail and tells you in plain English what broke, what it cost, and how to fix it.">
+  <title>Culpritly: AI incident analyst for WooCommerce and membership site payments</title>
+  <meta name="description" content="Culpritly is an AI incident analyst for WordPress stores and membership sites that take payments. It spots when WooCommerce checkout or membership signups quietly fail and tells you in plain English what broke, what it cost, and how to fix it.">
   <link rel="canonical" href="https://culpritly.com/">
   <meta name="theme-color" content="#0A0C10">
   <meta name="color-scheme" content="dark light">
@@ -13,14 +13,14 @@
   <meta property="og:site_name" content="Culpritly">
   <meta property="og:url" content="https://culpritly.com/">
   <meta property="og:title" content="Culpritly: something broke your store. Find out what, when, and what it cost.">
-  <meta property="og:description" content="AI incident analyst for WooCommerce checkout. Culpritly tracks every change, catches silent checkout breakage, and explains in plain English what broke, what it cost, and how to fix it.">
+  <meta property="og:description" content="AI incident analyst for WordPress stores and membership sites that take payments. Culpritly tracks every change, catches silent checkout and signup breakage and slowdowns, and explains in plain English what broke, what it cost, and how to fix it.">
   <meta property="og:image" content="https://culpritly.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Culpritly: Something broke your store. Culpritly tells you what, when, and what it cost.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Culpritly: something broke your store. Find out what, when, and what it cost.">
-  <meta name="twitter:description" content="AI incident analyst for WooCommerce checkout. Find out what broke, what it cost, and how to fix it.">
+  <meta name="twitter:description" content="AI incident analyst for WooCommerce stores and membership sites. Find out what broke, what it cost, and how to fix it.">
   <meta name="twitter:image" content="https://culpritly.com/assets/img/og-image.png">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -36,8 +36,8 @@
     "name": "Culpritly",
     "url": "https://culpritly.com/",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web, WordPress with WooCommerce",
-    "description": "Culpritly is an AI incident analyst for WooCommerce checkout. It records every change on a store and watches checkout health. When checkout breaks, it reads the error, the update's code changes and the store's timeline, then sends one plain-English alert with what changed, when orders dropped, the likely culprit with its evidence, the estimated revenue lost, and how to fix it.",
+    "operatingSystem": "Web, WordPress with WooCommerce, Restrict Content Pro, MemberPress or Paid Memberships Pro",
+    "description": "Culpritly is an AI incident analyst for WordPress stores and membership sites that take payments. It records every change on a site and watches WooCommerce checkout, membership signup pages and site speed. When checkout breaks, it reads the error, the update's code changes and the store's timeline, then sends one plain-English alert with what changed, when orders dropped, the likely culprit with its evidence, the estimated revenue lost, and how to fix it.",
     "offers": {
       "@type": "Offer",
       "name": "Founding plan",
@@ -71,7 +71,7 @@
         "name": "Does Culpritly slow my site down?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your store except a tiny error listener on the checkout page, so Culpritly can see the JavaScript errors your customers run into."
+          "text": "It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your site except a tiny error listener on checkout and other payment pages, so Culpritly can see the JavaScript errors your customers run into."
         }
       },
       {
@@ -79,7 +79,7 @@
         "name": "What data does Culpritly collect?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The privacy page has the details."
+          "text": "Change events (what was updated or changed, and when), error messages from checkout and other payment pages, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The privacy page has the details."
         }
       },
       {
@@ -95,7 +95,15 @@
         "name": "Which payment gateways does Culpritly support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Culpritly is starting with Stripe, WooPayments and PayPal. More gateways are planned."
+          "text": "Culpritly is starting with Stripe, WooPayments and PayPal. It also notices when the Stripe, PayPal, Braintree or Square payment script fails to load on a payment page. More gateways are planned."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it only work with WooCommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Culpritly watches WooCommerce checkout and cart, the payment pages of Restrict Content Pro, MemberPress and Paid Memberships Pro, and any page you mark as a payment page in the plugin settings. Change tracking, error alerts and slowness alerts work on any WordPress site. Order revenue estimates currently need WooCommerce."
         }
       },
       {
@@ -103,7 +111,7 @@
         "name": "Does Culpritly work with Shopify?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not yet. Culpritly is for WooCommerce stores for now. Shopify support is planned for later."
+          "text": "Not yet. Culpritly is for WordPress sites for now: WooCommerce stores and membership sites. Shopify support is planned for later."
         }
       },
       {
@@ -154,9 +162,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Early access for WooCommerce stores</p>
+          <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Early access for WooCommerce and membership sites</p>
           <h1 id="hero-title">Something broke your store. <span class="hero__accent">Culpritly tells you what, when, and what it cost.</span></h1>
-          <p class="lede">Culpritly records every change on your WooCommerce store and watches whether customers can still pay. When checkout quietly breaks, its AI incident analyst reads the error, the update's code changes and your store's timeline, then tells you in plain English what broke, what it cost, and how to fix it.</p>
+          <p class="lede">Culpritly records every change on your WordPress site and watches whether customers can still pay, on WooCommerce checkout and on membership signups (Restrict Content Pro, MemberPress, Paid Memberships Pro). When payments quietly break, its AI incident analyst reads the error, the update's code changes and your site's timeline, then tells you in plain English what broke, what it cost, and how to fix it.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
             <a class="btn btn--ghost" href="#how-it-works">See how it works</a>
@@ -226,7 +234,7 @@
         </div>
         <div class="problem">
           <div class="problem__copy">
-            <p>An update or a settings change lands. The site still loads and the product pages look fine. But there is a JavaScript error on the checkout page, or the payment gateway has stopped responding, and every customer who tries to pay quietly gives up.</p>
+            <p>An update or a settings change lands. The site still loads and the product pages look fine. But there is a JavaScript error on the checkout or signup page, or the payment gateway has stopped responding, and every customer who tries to pay quietly gives up.</p>
             <p>There is no white screen and no PHP error, so nothing raises a flag. WordPress's built-in rollback and uptime monitors only catch crashes. Most owners find out days later, from a customer or a sales report, and then pay a developer for hours of digging through logs to work out which change did it.</p>
           </div>
           <div class="problem__cases">
@@ -260,6 +268,34 @@
       </div>
     </section>
 
+    <!-- A real case -->
+    <section class="section" id="real-case" aria-labelledby="case-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">A real case</p>
+          <h2 id="case-title">Tested every week. A customer still found it first.</h2>
+        </div>
+        <div class="problem">
+          <div class="problem__copy">
+            <p>A membership site took new signups through a card payment form. Most of the time it worked. But when the payment provider's script loaded slowly, the membership plugin's own payment code ran before it was ready, failed with a JavaScript error, and the form went through without the payment step it needed. The visitor landed on a bare error page saying the payment setup was missing.</p>
+            <p>Updates on the site were tested carefully every week, and the tests passed, because the failure only appeared when that script happened to be slow. A real customer ran into it before anyone on the team did. The same site also slowed right down during peak hours, and at one point went offline.</p>
+          </div>
+          <div class="problem__cases">
+            <p class="cases__label">What Culpritly would have flagged</p>
+            <blockquote class="case">
+              <p><strong>Payment page JavaScript error.</strong> The error on the signup page, with the script and plugin it came from, the first time a visitor hit it.</p>
+            </blockquote>
+            <blockquote class="case">
+              <p><strong>Payment error page.</strong> The signup that ended on an error page, with its message and the plugin that stopped it. One is enough for a high-priority alert.</p>
+            </blockquote>
+            <blockquote class="case">
+              <p><strong>Slowness alert.</strong> Response times climbing far above normal at peak hours, before the site went down.</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- How it works -->
     <section class="section section--alt" id="how-it-works" aria-labelledby="how-title">
       <div class="container">
@@ -271,12 +307,12 @@
           <li class="step">
             <span class="step__num" aria-hidden="true">01</span>
             <h3>Install the connector</h3>
-            <p>Add the lightweight Culpritly plugin to your WooCommerce store. It sends small batches of events to Culpritly and stays out of your shoppers' way.</p>
+            <p>Add the lightweight Culpritly plugin to your WooCommerce store or membership site. It sends small batches of events to Culpritly and stays out of your customers' way.</p>
           </li>
           <li class="step">
             <span class="step__num" aria-hidden="true">02</span>
             <h3>Culpritly records and watches</h3>
-            <p>Every change is logged: plugin, theme and core updates, activations, and key WooCommerce and payment settings. Culpritly also watches checkout health: failed payments, checkout errors, and orders slowing or stopping compared with your normal pace.</p>
+            <p>Every change is logged: plugin, theme and core updates, activations, and key WooCommerce and payment settings. Culpritly also watches checkout health: failed payments, checkout and signup errors, payment scripts that fail to load, a site that slows down under load, and orders slowing or stopping compared with your normal pace.</p>
             <p class="step__note">Monitoring runs on our servers, so you still get alerted if your site is down.</p>
           </li>
           <li class="step">
@@ -322,7 +358,12 @@
           <li class="feature">
             <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
             <h3>Silent checkout breakage detection</h3>
-            <p>Catches JavaScript errors on checkout and payment gateway failures, not just crashes and downtime.</p>
+            <p>Catches JavaScript errors on checkout and membership signup pages, payment scripts that fail to load (Stripe, PayPal, Square, Braintree), payment error pages and gateway failures, not just crashes and downtime.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 13l3.5-3.5M12 3v2M9 2h6"/></svg>
+            <h3>Slowness and overload alerts</h3>
+            <p>Times your site every five minutes and alerts you when it gets far slower than its usual speed, the warning sign of peak-hour overload before customers give up or the site goes down.</p>
           </li>
           <li class="feature">
             <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/><circle cx="11" cy="11" r="1.5"/></svg>
@@ -349,7 +390,7 @@
             <h3>Email and Slack alerts</h3>
             <p>Alerts arrive where you already look, by email or in a Slack channel.</p>
           </li>
-          <li class="feature">
+          <li class="feature feature--wide">
             <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></svg>
             <h3>Built by a WooCommerce engineer</h3>
             <p>Designed by someone who works on payment gateway and checkout code, and has traced these failures by hand.</p>
@@ -407,12 +448,16 @@
         </div>
         <div class="audience">
           <article class="audience__card">
-            <h3>WooCommerce store owners</h3>
+            <h3>Store owners</h3>
             <p>Your revenue depends on checkout working. If an hour of zero orders would cost you real money, you want to hear about it from an alert, not from a customer or next month's sales report.</p>
           </article>
           <article class="audience__card">
+            <h3>Membership and course sites</h3>
+            <p>Signups and renewals are your revenue. Culpritly watches the signup and billing pages of Restrict Content Pro, MemberPress and Paid Memberships Pro, and any payment page you add, so a broken payment form does not go unnoticed until a member emails you.</p>
+          </article>
+          <article class="audience__card">
             <h3>Agencies and freelancers</h3>
-            <p>You run care plans for several stores. Culpritly helps you spot checkout breakage across client stores, fix it before the client notices, and show them exactly what happened and what it cost.</p>
+            <p>You run care plans for several client sites. Culpritly helps you spot payment breakage across them, fix it before the client notices, and show them exactly what happened and what it cost.</p>
           </article>
         </div>
       </div>
@@ -514,7 +559,7 @@
       <div class="container container--narrow">
         <div class="section__head">
           <p class="kicker">FAQ</p>
-          <h2 id="faq-title">Questions store owners ask</h2>
+          <h2 id="faq-title">Questions site owners ask</h2>
         </div>
         <div class="faq">
           <details>
@@ -523,11 +568,11 @@
           </details>
           <details>
             <summary><h3>Does Culpritly slow my site down?</h3></summary>
-            <p>It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your store except a tiny error listener on the checkout page, so Culpritly can see the JavaScript errors your customers run into.</p>
+            <p>It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your site except a tiny error listener on checkout and other payment pages, so Culpritly can see the JavaScript errors your customers run into.</p>
           </details>
           <details>
             <summary><h3>What data does Culpritly collect?</h3></summary>
-            <p>Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The <a href="privacy.html">privacy page</a> has the details.</p>
+            <p>Change events (what was updated or changed, and when), error messages from checkout and other payment pages, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The <a href="privacy.html">privacy page</a> has the details.</p>
           </details>
           <details>
             <summary><h3>Will Culpritly roll things back automatically?</h3></summary>
@@ -535,11 +580,15 @@
           </details>
           <details>
             <summary><h3>Which payment gateways does Culpritly support?</h3></summary>
-            <p>Culpritly is starting with Stripe, WooPayments and PayPal. More gateways are planned.</p>
+            <p>Culpritly is starting with Stripe, WooPayments and PayPal. It also notices when the Stripe, PayPal, Braintree or Square payment script fails to load on a payment page. More gateways are planned.</p>
+          </details>
+          <details>
+            <summary><h3>Does it only work with WooCommerce?</h3></summary>
+            <p>No. Culpritly watches WooCommerce checkout and cart, the payment pages of Restrict Content Pro, MemberPress and Paid Memberships Pro, and any page you mark as a payment page in the plugin settings. Change tracking, error alerts and slowness alerts work on any WordPress site. Order revenue estimates currently need WooCommerce.</p>
           </details>
           <details>
             <summary><h3>Does Culpritly work with Shopify?</h3></summary>
-            <p>Not yet. Culpritly is for WooCommerce stores for now. Shopify support is planned for later.</p>
+            <p>Not yet. Culpritly is for WordPress sites for now: WooCommerce stores and membership sites. Shopify support is planned for later.</p>
           </details>
           <details>
             <summary><h3>How is this different from an activity log or an uptime monitor?</h3></summary>

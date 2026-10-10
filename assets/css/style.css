@@ -858,6 +858,10 @@ a:hover {
   color: var(--text-muted);
 }
 
+.feature--wide {
+  grid-column: 1 / -1;
+}
+
 .feature--lead {
   grid-column: 1 / -1;
   display: grid;
@@ -1036,9 +1040,9 @@ a:hover {
   gap: 16px;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 900px) {
   .audience {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 }
