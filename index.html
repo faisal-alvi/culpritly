@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Culpritly: find what broke your WooCommerce checkout</title>
+  <meta name="description" content="Culpritly watches every change on your WooCommerce store and the health of your checkout. When payments quietly fail, you get the likely culprit, the revenue lost, and how to undo it.">
+  <link rel="canonical" href="https://culpritly.com/">
+  <meta name="theme-color" content="#0A0C10">
+  <meta name="color-scheme" content="dark light">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Culpritly">
+  <meta property="og:url" content="https://culpritly.com/">
+  <meta property="og:title" content="Culpritly: something broke your store. Find out what, when, and what it cost.">
+  <meta property="og:description" content="Change tracking and silent checkout breakage detection for WooCommerce stores. One plain-English alert with the likely culprit, the revenue lost, and how to undo it.">
+  <meta property="og:image" content="https://culpritly.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Culpritly: Something broke your store. Culpritly tells you what, when, and what it cost.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Culpritly: something broke your store. Find out what, when, and what it cost.">
+  <meta name="twitter:description" content="Change tracking and silent checkout breakage detection for WooCommerce stores.">
+  <meta name="twitter:image" content="https://culpritly.com/assets/img/og-image.png">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Culpritly",
+    "url": "https://culpritly.com/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, WordPress with WooCommerce",
+    "description": "Culpritly records every change on a WooCommerce store and watches checkout health. When checkout breaks, it sends one plain-English alert with what changed, when orders dropped, the likely culprit, the estimated revenue lost, and how to undo it.",
+    "offers": {
+      "@type": "Offer",
+      "name": "Founding plan",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "description": "Founding plan for the first 10 stores. Price locked while subscribed. Month to month, cancel any time.",
+      "url": "https://culpritly.com/#pricing"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Faisal Alvi",
+      "url": "https://faisalalvi.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Culpritly slow my site down?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your store except a tiny error listener on the checkout page, so Culpritly can see the JavaScript errors your customers run into."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data does Culpritly collect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. The privacy page has the details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will Culpritly roll things back automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every alert explains how to undo the change, and a rollback only happens when you confirm it. Rollback is never offered for WooCommerce core or for updates that changed your database, because reversing those safely needs a person's judgment. For those, the alert explains how to recover."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which payment gateways does Culpritly support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Culpritly is starting with Stripe, WooPayments and PayPal. More gateways are planned."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Culpritly work with Shopify?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not yet. Culpritly is for WooCommerce stores for now. Shopify support is planned for later."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from an activity log or an uptime monitor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, or which change caused it. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Culpritly ready today?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Culpritly is in early access. Founding stores get the free breakage replay first, then the product as each part ships, at a price that stays locked while they are subscribed."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/" aria-label="Culpritly home">
+        <img src="/assets/img/logo-mark.svg" alt="" width="28" height="28">
+        <span class="brand__name">Culpritly</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary btn--sm" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Free replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Early access for WooCommerce stores</p>
+          <h1 id="hero-title">Something broke your store. <span class="hero__accent">Culpritly tells you what, when, and what it cost.</span></h1>
+          <p class="lede">Culpritly records every change on your WooCommerce store and watches whether customers can still pay. When checkout quietly breaks, you get one plain-English alert: the likely culprit, the revenue at stake, and how to undo it.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+            <a class="btn btn--ghost" href="#how-it-works">See how it works</a>
+          </div>
+          <p class="hero__note">A 20-minute call. Free, no obligation.</p>
+        </div>
+
+        <figure class="incident" aria-labelledby="incident-caption">
+          <div class="incident__bar">
+            <span class="incident__status"><span class="pulse" aria-hidden="true"></span>Checkout incident</span>
+            <span class="incident__tag">Example</span>
+          </div>
+
+          <ol class="timeline">
+            <li class="timeline__row timeline__row--change">
+              <time class="timeline__time" datetime="03:04">03:04</time>
+              <span class="timeline__kind">Change</span>
+              <span class="timeline__text">Plugin "Checkout Tracking" updated 2.0.2 &rarr; 2.0.3</span>
+            </li>
+            <li class="timeline__row timeline__row--error">
+              <time class="timeline__time" datetime="03:06">03:06</time>
+              <span class="timeline__kind">Error</span>
+              <span class="timeline__text">JavaScript error on /checkout/ (Stripe payment form)</span>
+            </li>
+            <li class="timeline__row timeline__row--orders">
+              <time class="timeline__time" datetime="03:10">03:10</time>
+              <span class="timeline__kind">Orders</span>
+              <span class="timeline__text">Orders per hour: 14 &rarr; 0</span>
+            </li>
+          </ol>
+
+          <div class="spark" aria-hidden="true">
+            <span style="--h:62%"></span><span style="--h:70%"></span><span style="--h:58%"></span><span style="--h:74%"></span><span style="--h:66%"></span><span style="--h:78%"></span><span style="--h:69%"></span><span style="--h:72%"></span><span class="is-zero"></span><span class="is-zero"></span><span class="is-zero"></span><span class="is-zero"></span>
+          </div>
+
+          <div class="verdict">
+            <div class="verdict__item">
+              <p class="verdict__label">Likely culprit</p>
+              <p class="verdict__value">Checkout Tracking 2.0.3 <span class="pill">High confidence</span></p>
+            </div>
+            <div class="verdict__item">
+              <p class="verdict__label">Estimated lost revenue so far</p>
+              <p class="verdict__money">$1,840</p>
+            </div>
+          </div>
+
+          <div class="incident__actions">
+            <span class="mock-btn" aria-hidden="true">Review rollback</span>
+            <span class="incident__hint">Nothing changes without your OK</span>
+          </div>
+
+          <figcaption id="incident-caption" class="incident__caption">Example alert with made-up data, to show what Culpritly sends. Not a real store.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">The problem</p>
+          <h2 id="problem-title">The worst breakages don't look broken</h2>
+        </div>
+        <div class="problem">
+          <div class="problem__copy">
+            <p>An update or a settings change lands. The site still loads and the product pages look fine. But there is a JavaScript error on the checkout page, or the payment gateway has stopped responding, and every customer who tries to pay quietly gives up.</p>
+            <p>There is no white screen and no PHP error, so nothing raises a flag. WordPress's built-in rollback and uptime monitors only catch crashes. Most owners find out days later, from a customer or a sales report, and then pay a developer for hours of digging through logs to work out which change did it.</p>
+          </div>
+          <div class="problem__cases">
+            <p class="cases__label">It happens</p>
+            <blockquote class="case">
+              <p>In September 2026, an automatic update to a popular WooCommerce tracking plugin broke Stripe checkout on live stores. The pages loaded fine. Payments did not.</p>
+            </blockquote>
+            <blockquote class="case">
+              <p>After one WooCommerce core update, a store owner reported customers could not check out for over a month.</p>
+            </blockquote>
+          </div>
+        </div>
+
+        <ul class="compare" aria-label="What different tools notice">
+          <li class="compare__item">
+            <p class="compare__tool">Uptime monitor</p>
+            <p class="compare__q">Does the page load?</p>
+            <p class="compare__a compare__a--miss">Yes. All clear.</p>
+          </li>
+          <li class="compare__item">
+            <p class="compare__tool">Built-in rollback</p>
+            <p class="compare__q">Did PHP crash?</p>
+            <p class="compare__a compare__a--miss">No. Nothing to do.</p>
+          </li>
+          <li class="compare__item compare__item--us">
+            <p class="compare__tool">Culpritly</p>
+            <p class="compare__q">Can customers still pay, and if not, what changed?</p>
+            <p class="compare__a compare__a--hit">Checkout broke at 03:06. Here is why.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--alt" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">How it works</p>
+          <h2 id="how-title">From silent failure to a clear answer</h2>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num" aria-hidden="true">01</span>
+            <h3>Install the connector</h3>
+            <p>Add the lightweight Culpritly plugin to your WooCommerce store. It sends small batches of events to Culpritly and stays out of your shoppers' way.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">02</span>
+            <h3>Culpritly records and watches</h3>
+            <p>Every change is logged: plugin, theme and core updates, activations, and key WooCommerce and payment settings. Culpritly also watches checkout health: failed payments, checkout errors, and orders slowing or stopping compared with your normal pace.</p>
+            <p class="step__note">Monitoring runs on our servers, so you still get alerted if your site is down.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">03</span>
+            <h3>You get one clear alert</h3>
+            <p>When something breaks, you get a single plain-English alert: what changed, when orders dropped, the likely culprit, the estimated revenue lost, and how to undo it.</p>
+            <p class="step__note">You stay in control. Nothing is rolled back without your OK.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">Features</p>
+          <h2 id="features-title">Built to answer one question fast: what broke checkout?</h2>
+        </div>
+        <ul class="features">
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/><circle cx="19" cy="12" r="2"/></svg>
+            <h3>Change timeline</h3>
+            <p>Every plugin, theme and core update, activation, and key settings change on your store, in one timeline.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
+            <h3>Silent checkout breakage detection</h3>
+            <p>Catches JavaScript errors on checkout and payment gateway failures, not just crashes and downtime.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/><circle cx="11" cy="11" r="1.5"/></svg>
+            <h3>Likely culprit</h3>
+            <p>Lines up your changes against checkout health and points to the change most likely to blame, with a confidence level.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M16.5 7.5c0-1.7-2-3-4.5-3s-4.5 1.3-4.5 3 2 2.6 4.5 3 4.5 1.3 4.5 3-2 3-4.5 3-4.5-1.3-4.5-3"/></svg>
+            <h3>Revenue impact in dollars</h3>
+            <p>Compares orders with your normal pace for that time of day and week, so you see an estimate of what the breakage is costing.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+            <h3>Owner-confirmed undo</h3>
+            <p>Each alert shows how to undo the change. A rollback only happens when you confirm it.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg>
+            <h3>Weekly "changes and their cost" email</h3>
+            <p>A short weekly summary of what changed on your store and what, if anything, it cost you.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+            <h3>Email and Slack alerts</h3>
+            <p>Alerts arrive where you already look, by email or in a Slack channel.</p>
+          </li>
+          <li class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/></svg>
+            <h3>Built by a WooCommerce engineer</h3>
+            <p>Designed by someone who works on payment gateway and checkout code, and has traced these failures by hand.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="section section--alt" id="who" aria-labelledby="who-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">Who it's for</p>
+          <h2 id="who-title">For people who answer for checkout</h2>
+        </div>
+        <div class="audience">
+          <article class="audience__card">
+            <h3>WooCommerce store owners</h3>
+            <p>Your revenue depends on checkout working. If an hour of zero orders would cost you real money, you want to hear about it from an alert, not from a customer or next month's sales report.</p>
+          </article>
+          <article class="audience__card">
+            <h3>Agencies and freelancers</h3>
+            <p>You run care plans for several stores. Culpritly helps you spot checkout breakage across client stores, fix it before the client notices, and show them exactly what happened and what it cost.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="section" id="replay" aria-labelledby="replay-title">
+      <div class="container">
+        <div class="offer">
+          <div class="offer__copy">
+            <p class="kicker">Free offer</p>
+            <h2 id="replay-title">Get a free breakage replay</h2>
+            <p class="offer__lede">Book a 20-minute call. I'll replay your store's recent changes against your order history and show you what Culpritly would have caught. Free, no obligation.</p>
+            <ul class="checklist">
+              <li>Your recent plugin, theme and core changes on one timeline</li>
+              <li>Any dips in orders that line up with those changes</li>
+              <li>What a Culpritly alert would have told you, and when</li>
+            </ul>
+          </div>
+          <div class="offer__cta">
+            <a class="btn btn--primary btn--lg" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Book my free replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+            <p class="offer__alt">Prefer email? <a href="mailto:hello@culpritly.com">hello@culpritly.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section--alt" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">Pricing</p>
+          <h2 id="pricing-title">Founding pricing</h2>
+          <p class="section__sub">Culpritly is in early access. Founding stores help shape it.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="plan plan--founding" aria-labelledby="plan-founding">
+            <div class="plan__top">
+              <h3 id="plan-founding">Founding plan</h3>
+              <span class="plan__badge">First 10 stores only</span>
+            </div>
+            <p class="plan__price"><span class="plan__amount">$49</span><span class="plan__per">/month</span></p>
+            <ul class="checklist">
+              <li>Price locked for as long as you stay subscribed</li>
+              <li>Month to month, cancel any time</li>
+              <li>Free breakage replay before you commit</li>
+              <li>Your feedback shapes what gets built next</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Start with a free replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+          </article>
+
+          <div class="planned">
+            <h3 class="planned__title">Planned regular pricing</h3>
+            <p class="planned__note">Planned, and subject to change.</p>
+            <ul class="planned__list">
+              <li class="planned__row">
+                <span class="planned__name">Store</span>
+                <span class="planned__desc">1 store</span>
+                <span class="planned__price">$49<span>/mo</span></span>
+              </li>
+              <li class="planned__row">
+                <span class="planned__name">Growth</span>
+                <span class="planned__desc">3 stores + Slack alerts</span>
+                <span class="planned__price">$99<span>/mo</span></span>
+              </li>
+              <li class="planned__row">
+                <span class="planned__name">Agency</span>
+                <span class="planned__desc">10 stores + client reports</span>
+                <span class="planned__price">$149<span>/mo</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about">
+          <p class="kicker">Who's building it</p>
+          <h2 id="about-title">Built by someone who has done this by hand</h2>
+          <p>Culpritly is built by <a href="https://faisalalvi.com" target="_blank" rel="noopener">Faisal Alvi<span class="visually-hidden"> (opens in a new tab)</span></a>, a senior WooCommerce engineer who works on payment gateways and checkout code. He has spent years tracing exactly these failures by hand: reading logs, lining up update times against order drops, and working out which change broke checkout.</p>
+          <p>Culpritly is that process, written down and running all the time, so you get the answer without the hours of digging.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section__head">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-title">Questions store owners ask</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary><h3>Does Culpritly slow my site down?</h3></summary>
+            <p>It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your store except a tiny error listener on the checkout page, so Culpritly can see the JavaScript errors your customers run into.</p>
+          </details>
+          <details>
+            <summary><h3>What data does Culpritly collect?</h3></summary>
+            <p>Change events (what was updated or changed, and when), error messages from checkout, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. The <a href="/privacy.html">privacy page</a> has the details.</p>
+          </details>
+          <details>
+            <summary><h3>Will Culpritly roll things back automatically?</h3></summary>
+            <p>No. Every alert explains how to undo the change, and a rollback only happens when you confirm it. Rollback is never offered for WooCommerce core or for updates that changed your database, because reversing those safely needs a person's judgment. For those, the alert explains how to recover.</p>
+          </details>
+          <details>
+            <summary><h3>Which payment gateways does Culpritly support?</h3></summary>
+            <p>Culpritly is starting with Stripe, WooPayments and PayPal. More gateways are planned.</p>
+          </details>
+          <details>
+            <summary><h3>Does Culpritly work with Shopify?</h3></summary>
+            <p>Not yet. Culpritly is for WooCommerce stores for now. Shopify support is planned for later.</p>
+          </details>
+          <details>
+            <summary><h3>How is this different from an activity log or an uptime monitor?</h3></summary>
+            <p>An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, or which change caused it. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you.</p>
+          </details>
+          <details>
+            <summary><h3>Is Culpritly ready today?</h3></summary>
+            <p>Culpritly is in early access. Founding stores get the free breakage replay first, then the product as each part ships, at a price that stays locked while they are subscribed.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cta-band" aria-labelledby="cta-title">
+      <div class="container cta-band__inner">
+        <h2 id="cta-title">See what Culpritly would have caught on your store</h2>
+        <p>Twenty minutes, your real change history, no obligation.</p>
+        <div class="hero__ctas hero__ctas--center">
+          <a class="btn btn--primary btn--lg" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+          <a class="btn btn--ghost btn--lg" href="mailto:hello@culpritly.com">Email hello@culpritly.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a class="brand brand--footer" href="/" aria-label="Culpritly home">
+        <img src="/assets/img/logo-mark.svg" alt="" width="24" height="24">
+        <span class="brand__name">Culpritly</span>
+      </a>
+      <p class="site-footer__copy">&copy; 2026 Culpritly</p>
+      <ul class="site-footer__links">
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="mailto:hello@culpritly.com">hello@culpritly.com</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
