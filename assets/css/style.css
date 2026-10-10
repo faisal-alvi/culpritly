@@ -1261,7 +1261,40 @@ a:hover {
 /* About */
 
 .about {
-  max-width: 760px;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about__photo {
+  margin: 0;
+}
+
+.about__photo img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+}
+
+.about__links {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about__photo img {
+    width: 112px;
+    height: 112px;
+  }
 }
 
 .about h2 {
