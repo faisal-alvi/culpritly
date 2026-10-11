@@ -102,7 +102,7 @@ Recommended: verify the domain for your account or organization (GitHub Settings
 ## Editing notes
 
 - All booking buttons link to https://calendly.com/faisalalvi33/new-meeting and open in a new tab.
-- Contact email is faisalalvi33@gmail.com.
+- Contact email is hello@faisalalvi.com.
 - The FAQ appears twice: once in the visible page and once in the FAQPage JSON-LD in `<head>`. Keep them in sync when editing.
 - Keep internal links relative (no leading `/`) so the subpath setup keeps working.
 - `assets/img/og-image.png` is the social sharing image (1200 x 630). Regenerate it if the headline changes.

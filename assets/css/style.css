@@ -38,7 +38,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     --bg: #fafaf7;
     --bg-alt: #f2f2ed;
     --surface: #ffffff;
@@ -54,6 +54,23 @@
     --shadow: 0 30px 70px -35px rgba(14, 17, 23, 0.45);
     color-scheme: light;
   }
+}
+
+:root[data-theme="light"] {
+  --bg: #fafaf7;
+  --bg-alt: #f2f2ed;
+  --surface: #ffffff;
+  --surface-2: #f6f6f2;
+  --border: #e2e2db;
+  --border-strong: #cfcfc6;
+  --text: #0e1117;
+  --text-muted: #4a5163;
+  --accent: #ff5a1f;
+  --accent-text: #c2410c;
+  --accent-soft: rgba(255, 90, 31, 0.1);
+  --on-accent: #0a0c10;
+  --shadow: 0 30px 70px -35px rgba(14, 17, 23, 0.45);
+  color-scheme: light;
 }
 
 *,
@@ -1512,4 +1529,35 @@ a:hover {
   .incident {
     padding: 16px;
   }
+}
+
+
+/* Theme toggle */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-right: 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
 }
