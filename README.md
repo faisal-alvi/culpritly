@@ -2,7 +2,7 @@
 
 Static pre-sell landing page for Culpritly, built for GitHub Pages.
 
-Plain HTML and CSS. No build step, no frameworks, no trackers. The only script is a few lines inline in `404.html`.
+Plain HTML and CSS. No build step, no frameworks, no trackers, no font CDN. The only scripts are a few inline lines (theme toggle, and the home links in `404.html`).
 
 ## Files
 
@@ -12,6 +12,7 @@ privacy.html          Privacy page
 404.html              Not found page, fully self-contained (inline CSS and logo)
 assets/css/style.css  All styles (dark by default, light via prefers-color-scheme)
 assets/img/           Logo mark, favicon, Open Graph image
+assets/fonts/         Inter and JetBrains Mono (variable, latin subset, woff2) with their SIL OFL 1.1 license files
 robots.txt            Allows all crawlers, points to the sitemap
 sitemap.xml           Home and privacy URLs
 .nojekyll             Tells GitHub Pages to serve files as they are
@@ -107,3 +108,11 @@ Recommended: verify the domain for your account or organization (GitHub Settings
 - Keep internal links relative (no leading `/`) so the subpath setup keeps working.
 - `assets/img/og-image.png` is the social sharing image (1200 x 630). Regenerate it if the headline changes.
 - Keep `lastmod` in `sitemap.xml` current when content changes.
+
+## Third-party requests
+
+The page itself makes none: fonts, styles, scripts and images all come from this site. The only links
+that leave it are ones a visitor clicks: the app sign up and terms pages (the Culpritly app server),
+Calendly (booking a call), LinkedIn and faisalalvi.com (about the founder). GitHub Pages serves the files
+and may keep standard server logs. No cookies are set and nothing is stored beyond a light/dark
+preference in the browser's local storage.

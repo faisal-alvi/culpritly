@@ -26,9 +26,7 @@
   <meta name="twitter:image" content="https://culpritly.com/assets/img/og-image.png">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script type="application/ld+json">
@@ -511,7 +509,15 @@
               <li>Free breakage replay before you commit</li>
               <li>Your feedback shapes what gets built next</li>
             </ul>
-            <a class="btn btn--primary btn--block" href="https://35-253-165-3.sslip.io/signup">Start free trial</a>
+            <a class="btn btn--primary btn--block" href="https://35-253-165-3.sslip.io/signup" aria-describedby="plan-terms">Start free trial</a>
+            <ul class="plan__terms" id="plan-terms">
+              <li>The 14 day trial needs no card and never turns into a paid plan by itself. Nothing is charged unless you subscribe.</li>
+              <li><strong>$49 per month</strong>, billed monthly in advance. Taxes, if any, are added at checkout.</li>
+              <li>Renews automatically every month until you cancel.</li>
+              <li>Cancel any time in the app (Billing, then Manage billing). Access continues to the end of the paid period.</li>
+              <li>Refunds: ask within 14 days of your first payment for a full refund. Later months are not refunded.</li>
+              <li>Payments are handled by Lemon Squeezy. See the <a href="https://35-253-165-3.sslip.io/terms" rel="noopener">terms</a>.</li>
+            </ul>
           </article>
 
           <div class="planned">
