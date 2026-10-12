@@ -27,7 +27,7 @@ All internal links and asset paths are relative (`assets/...`, `privacy.html`, `
 
 `404.html` does not load any external stylesheet or image from the site, because GitHub Pages serves it for missing URLs at any depth, where relative paths would break. A small inline script points its "home" links at `/` on culpritly.com and at the project folder (for example `/culpritly/`) everywhere else.
 
-The canonical URL, `og:url`, `og:image`, `twitter:image`, sitemap and JSON-LD URLs intentionally stay absolute on `https://culpritly.com/`. They become correct as soon as the domain is live.
+The canonical URL, `og:url`, `og:image`, `twitter:image`, sitemap and JSON-LD URLs are absolute. They point at `https://faisalalvi.com/culpritly/` until culpritly.com is bought (social cards fetch the image from this absolute URL, so it must resolve today); then switch them back to `https://culpritly.com/` (search and replace) when the custom domain is live. They become correct as soon as the domain is live.
 
 ## Preview locally
 
