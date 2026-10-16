@@ -171,6 +171,7 @@
           <a class="btn btn--ghost btn--lg" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Or get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
         </div>
         <p class="hero__note">No card needed &bull; Install in about 5 minutes &bull; Nothing changes without your OK</p>
+        <a class="watch" href="#tour"><span class="watch__icon" aria-hidden="true"><svg viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg></span><span>Watch the 30-second tour</span></a>
 
         <div class="stage">
           <figure class="stage__main">
@@ -191,7 +192,7 @@
 
 
     <!-- Video + proof -->
-    <section class="showreel" aria-label="Culpritly in 30 seconds">
+    <section class="showreel" id="tour" aria-label="Culpritly in 30 seconds">
       <div class="container">
         <div class="showreel__frame">
           <video class="showreel__video" autoplay muted loop playsinline controls preload="metadata" poster="assets/video/poster.jpg" aria-label="30 second walkthrough: checkout breaks quietly, Culpritly finds the cause, the cost and what to try first. Example with made-up data.">
@@ -668,5 +669,6 @@
     </div>
   </footer>
 <script>(function(){var b=document.querySelector(".theme-toggle");if(!b)return;function cur(){var a=document.documentElement.getAttribute("data-theme");if(a)return a;return window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}b.addEventListener("click",function(){var n=cur()==="light"?"dark":"light";document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("theme",n);}catch(e){}});})();</script>
+  <script src="assets/js/reveal.js" defer></script>
 </body>
 </html>
