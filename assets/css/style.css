@@ -22,20 +22,24 @@
 }
 
 :root {
-  --bg: #0a0c10;
-  --bg-alt: #0f1218;
-  --surface: #141821;
-  --surface-2: #1a1f2a;
-  --border: #252b38;
-  --border-strong: #353d4e;
-  --text: #eceef3;
-  --text-muted: #a3a9b8;
+
+  --bg: #fafaf7;
+  --bg-alt: #f2f2ed;
+  --surface: #ffffff;
+  --surface-2: #f6f6f2;
+  --border: #e2e2db;
+  --border-strong: #cfcfc6;
+  --text: #0e1117;
+  --text-muted: #4a5163;
   --accent: #ff5a1f;
-  --accent-text: #ff7a45;
-  --accent-soft: rgba(255, 90, 31, 0.12);
+  --accent-text: #c2410c;
+  --accent-soft: rgba(255, 90, 31, 0.1);
   --on-accent: #0a0c10;
+  --shadow: 0 30px 70px -35px rgba(14, 17, 23, 0.45);
+  color-scheme: light;
+
+
   --ok: #3dd68c;
-  --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
 
   /* Incident card stays dark in both themes */
   --term-bg: #0d1016;
@@ -53,46 +57,26 @@
   --radius: 14px;
   --radius-sm: 8px;
   --gutter: 20px;
-  --maxw: 1160px;
+  --maxw: 1320px;
 
-  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #fafaf7;
-    --bg-alt: #f2f2ed;
-    --surface: #ffffff;
-    --surface-2: #f6f6f2;
-    --border: #e2e2db;
-    --border-strong: #cfcfc6;
-    --text: #0e1117;
-    --text-muted: #4a5163;
-    --accent: #ff5a1f;
-    --accent-text: #c2410c;
-    --accent-soft: rgba(255, 90, 31, 0.1);
-    --on-accent: #0a0c10;
-    --shadow: 0 30px 70px -35px rgba(14, 17, 23, 0.45);
-    color-scheme: light;
-  }
+
+:root[data-theme="dark"] {
+--bg: #0a0c10;
+--bg-alt: #0f1218;
+--surface: #141821;
+--surface-2: #1a1f2a;
+--border: #252b38;
+--border-strong: #353d4e;
+--text: #eceef3;
+--text-muted: #a3a9b8;
+--accent-text: #ff7a45;
+--accent-soft: rgba(255, 90, 31, 0.12);
+--shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
+color-scheme: dark;
 }
 
-:root[data-theme="light"] {
-  --bg: #fafaf7;
-  --bg-alt: #f2f2ed;
-  --surface: #ffffff;
-  --surface-2: #f6f6f2;
-  --border: #e2e2db;
-  --border-strong: #cfcfc6;
-  --text: #0e1117;
-  --text-muted: #4a5163;
-  --accent: #ff5a1f;
-  --accent-text: #c2410c;
-  --accent-soft: rgba(255, 90, 31, 0.1);
-  --on-accent: #0a0c10;
-  --shadow: 0 30px 70px -35px rgba(14, 17, 23, 0.45);
-  color-scheme: light;
-}
 
 *,
 *::before,
@@ -1619,3 +1603,5 @@ a:hover {
 .proofline strong{color:var(--text)}
 @media (min-width:900px){.showcase__item{grid-template-columns:5fr 7fr;gap:48px}.showcase__item--flip .showcase__text{order:2}}
 @media (min-width:900px){.showcase__item--flip{grid-template-columns:7fr 5fr}}
+
+@media (min-width:1700px){:root{--maxw:1520px}}
