@@ -1676,3 +1676,5 @@ a:hover {
 .brand img{width:34px;height:34px}
 .brand__name{font-size:1.5rem;font-weight:800;letter-spacing:-.05em;line-height:1;display:inline-flex;align-items:baseline}
 .brand__dot{display:inline-block;width:.24em;height:.24em;border-radius:50%;background:var(--accent);margin-left:.06em}
+.features{background:none!important;border:0!important;border-radius:0!important;overflow:visible!important}
+@media (max-width:859px){.features{gap:14px}.features .feature{padding:24px 22px}}
