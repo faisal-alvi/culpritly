@@ -246,6 +246,28 @@
       </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+    <!-- Final CTA -->
+    <section class="section cta-band" aria-labelledby="cta-title">
+      <div class="container cta-band__inner">
+        <h2 id="cta-title">See what Culpritly would have caught on your store</h2>
+        <p>Twenty minutes, your real change history, no obligation.</p>
+        <div class="hero__ctas hero__ctas--center">
+          <a class="btn btn--primary btn--lg" href="https://35-253-165-3.sslip.io/signup">Start free 14-day trial</a>
+          <a class="btn btn--ghost btn--lg" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
+        </div>
+      </div>
+    </section>
+  
     <!-- Problem -->
     <section class="section" id="problem" aria-labelledby="problem-title">
       <div class="container">
@@ -289,31 +311,40 @@
       </div>
     </section>
 
-    <!-- A real case -->
-    <section class="section" id="real-case" aria-labelledby="case-title">
+    <!-- Product -->
+    <section class="section" id="product" aria-labelledby="product-title">
       <div class="container">
         <div class="section__head">
-          <p class="kicker">A real case</p>
-          <h2 id="case-title">Tested every week. A customer still found it first.</h2>
+          <p class="kicker">The product</p>
+          <h2 id="product-title">See the answer, not a log file</h2>
         </div>
-        <div class="problem">
-          <div class="problem__copy">
-            <p>A membership site took new signups through a card payment form. Most of the time it worked. But when the payment provider's script loaded slowly, the membership plugin's own payment code ran before it was ready, failed with a JavaScript error, and the form went through without the payment step it needed. The visitor landed on a bare error page saying the payment setup was missing.</p>
-            <p>Updates on the site were tested carefully every week, and the tests passed, because the failure only appeared when that script happened to be slow. A real customer ran into it before anyone on the team did. The same site also slowed right down during peak hours, and at one point went offline.</p>
-          </div>
-          <div class="problem__cases">
-            <p class="cases__label">What Culpritly would have flagged</p>
-            <blockquote class="case">
-              <p><strong>Payment page JavaScript error.</strong> The error on the signup page, with the script and plugin it came from, the first time a visitor hit it.</p>
-            </blockquote>
-            <blockquote class="case">
-              <p><strong>Payment error page.</strong> The signup that ended on an error page, with its message and the plugin that stopped it. One is enough for a high-priority alert.</p>
-            </blockquote>
-            <blockquote class="case">
-              <p><strong>Slowness alert.</strong> Response times climbing far above normal at peak hours, before the site went down.</p>
-            </blockquote>
-          </div>
-        </div>
+        <ol class="showcase">
+          <li class="showcase__item">
+            <div class="showcase__text">
+              <span class="step__num" aria-hidden="true">01</span>
+              <h3>Know the moment checkout breaks</h3>
+              <p>Orders against your normal pace, with the change that landed just before the drop marked on the chart.</p>
+            </div>
+            <figure class="showcase__shot"><img src="assets/img/app-dash.jpg" width="1440" height="1000" loading="lazy" alt="Culpritly store overview: a critical checkout incident and an orders chart falling to zero after a plugin update."><figcaption>Replay of the real GTM4WP 2.0.3 incident, shown as demo data.</figcaption></figure>
+          </li>
+          <li class="showcase__item showcase__item--flip">
+            <div class="showcase__text">
+              <span class="step__num" aria-hidden="true">02</span>
+              <h3>Get the likely culprit and the cost</h3>
+              <p>One alert with the update most likely to blame, how sure we are, what it cost so far, and ranked safe first steps.</p>
+            </div>
+            <figure class="showcase__shot"><img src="assets/img/app-incident.jpg" width="1440" height="1000" loading="lazy" alt="Culpritly incident page: likely culprit GTM4WP 2.0.2 to 2.0.3 with high confidence, estimated cost, and three safe next steps."><figcaption>Demo data. The cost is an estimate range, not a promise.</figcaption></figure>
+          </li>
+          <li class="showcase__item">
+            <div class="showcase__text">
+              <span class="step__num" aria-hidden="true">03</span>
+              <h3>Fix the setups that tend to break</h3>
+              <p>A risk report lists exposures that have broken other stores, each with a first safe step and a real public example.</p>
+            </div>
+            <figure class="showcase__shot"><img src="assets/img/app-risk.jpg" width="1440" height="1000" loading="lazy" alt="Culpritly checkout risk report listing plugin auto-updates and script-delay plugins as things worth fixing."><figcaption>Demo data. Rule based, it lists exposure and does not predict.</figcaption></figure>
+          </li>
+        </ol>
+        <p class="proofline">Proven on two real public incidents, replayed end to end: <strong>GTM4WP 2.0.3</strong> and <strong>WooCommerce PayPal Payments 4.1.0</strong>.</p>
       </div>
     </section>
 
@@ -420,6 +451,140 @@
       </div>
     </section>
 
+    <!-- Pricing -->
+    <section class="section section--alt" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">Pricing</p>
+          <h2 id="pricing-title">Founding pricing</h2>
+          <p class="section__sub">Culpritly is in early access. Founding stores help shape it.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="plan plan--founding" aria-labelledby="plan-founding">
+            <div class="plan__top">
+              <h3 id="plan-founding">Founding plan</h3>
+              <span class="plan__badge">First 10 stores only</span>
+            </div>
+            <p class="plan__price"><span class="plan__amount">$49</span><span class="plan__per">/month</span></p>
+            <ul class="checklist">
+              <li>Everything in the product, including email and Slack alerts</li>
+              <li>Price locked for as long as you stay subscribed</li>
+              <li>Month to month, cancel any time</li>
+              <li>Free breakage replay before you commit</li>
+              <li>Your feedback shapes what gets built next</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="https://35-253-165-3.sslip.io/signup" aria-describedby="plan-terms">Start free trial</a>
+            <ul class="plan__terms" id="plan-terms">
+              <li>The 14 day trial needs no card and never turns into a paid plan by itself. Nothing is charged unless you subscribe.</li>
+              <li><strong>$49 per month</strong>, billed monthly in advance. Taxes, if any, are added at checkout.</li>
+              <li>Renews automatically every month until you cancel.</li>
+              <li>Cancel any time in the app (Billing, then Manage billing). Access continues to the end of the paid period.</li>
+              <li>Refunds: ask within 14 days of your first payment for a full refund. Later months are not refunded.</li>
+              <li>Payments are handled by Lemon Squeezy. See the <a href="https://35-253-165-3.sslip.io/terms" rel="noopener">terms</a>.</li>
+            </ul>
+          </article>
+
+          <div class="planned">
+            <h3 class="planned__title">Planned regular pricing</h3>
+            <p class="planned__note">Planned, and subject to change.</p>
+            <ul class="planned__list">
+              <li class="planned__row">
+                <span class="planned__name">Store</span>
+                <span class="planned__desc">1 store</span>
+                <span class="planned__price">$49<span>/mo</span></span>
+              </li>
+              <li class="planned__row">
+                <span class="planned__name">Growth</span>
+                <span class="planned__desc">3 stores + Slack alerts</span>
+                <span class="planned__price">$99<span>/mo</span></span>
+              </li>
+              <li class="planned__row">
+                <span class="planned__name">Agency</span>
+                <span class="planned__desc">10 stores + client reports</span>
+                <span class="planned__price">$149<span>/mo</span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section__head">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-title">Questions site owners ask</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary><h3>What does the AI actually do?</h3></summary>
+            <p>It explains incidents. When checkout breaks, it reads the error messages, the changelog and code diff of whatever changed, and your store's timeline, then writes a plain-English explanation of the likely cause and suggests a fix. It does not take actions on its own. Every suggestion shows the evidence it is based on, and you approve anything that changes your store.</p>
+          </details>
+          <details>
+            <summary><h3>Does Culpritly slow my site down?</h3></summary>
+            <p>It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your site except a tiny error listener on checkout and other payment pages, so Culpritly can see the JavaScript errors your customers run into.</p>
+          </details>
+          <details>
+            <summary><h3>What data does Culpritly collect?</h3></summary>
+            <p>Change events (what was updated or changed, and when), error messages from checkout and other payment pages, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The <a href="privacy.html">privacy page</a> has the details.</p>
+          </details>
+          <details>
+            <summary><h3>Will Culpritly roll things back automatically?</h3></summary>
+            <p>No. Every alert explains how to undo the change, and a rollback only happens when you confirm it. Rollback is never offered for WooCommerce core or for updates that changed your database, because reversing those safely needs a person's judgment. For those, the alert explains how to recover.</p>
+          </details>
+          <details>
+            <summary><h3>Which payment gateways does Culpritly support?</h3></summary>
+            <p>Culpritly is starting with Stripe, WooPayments and PayPal. It also notices when the Stripe, PayPal, Braintree or Square payment script fails to load on a payment page. More gateways are planned.</p>
+          </details>
+          <details>
+            <summary><h3>Does it only work with WooCommerce?</h3></summary>
+            <p>No. Culpritly watches WooCommerce checkout and cart, the payment pages of Restrict Content Pro, MemberPress and Paid Memberships Pro, and any page you mark as a payment page in the plugin settings. Change tracking, error alerts and slowness alerts work on any WordPress site. Order revenue estimates currently need WooCommerce.</p>
+          </details>
+          <details>
+            <summary><h3>Does Culpritly work with Shopify?</h3></summary>
+            <p>Not yet. Culpritly is for WordPress sites for now: WooCommerce stores and membership sites. Shopify support is planned for later.</p>
+          </details>
+          <details>
+            <summary><h3>How is this different from an activity log or an uptime monitor?</h3></summary>
+            <p>An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, which change caused it, or why. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you, and its AI incident analyst explains the cause in plain English with the evidence. The upcoming update risk check goes one step earlier and flags risky updates before you install them.</p>
+          </details>
+          <details>
+            <summary><h3>Is Culpritly ready today?</h3></summary>
+            <p>Culpritly is in early access. Founding stores get the free breakage replay first, then the product as each part ships, at a price that stays locked while they are subscribed.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- A real case -->
+    <section class="section" id="real-case" aria-labelledby="case-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="kicker">A real case</p>
+          <h2 id="case-title">Tested every week. A customer still found it first.</h2>
+        </div>
+        <div class="problem">
+          <div class="problem__copy">
+            <p>A membership site tested its updates every week and the tests passed. But when the payment provider's script loaded slowly, the membership plugin's code ran too early and failed. Visitors landed on a bare error page and a real customer found it first.</p>
+          </div>
+          <div class="problem__cases">
+            <p class="cases__label">What Culpritly would have flagged</p>
+            <blockquote class="case">
+              <p><strong>Payment page JavaScript error.</strong> The error on the signup page, with the script and plugin it came from, the first time a visitor hit it.</p>
+            </blockquote>
+            <blockquote class="case">
+              <p><strong>Payment error page.</strong> The signup that ended on an error page, with its message and the plugin that stopped it. One is enough for a high-priority alert.</p>
+            </blockquote>
+            <blockquote class="case">
+              <p><strong>Slowness alert.</strong> Response times climbing far above normal at peak hours, before the site went down.</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Coming soon -->
     <section class="section section--alt" id="coming-soon" aria-labelledby="soon-title">
       <div class="container">
@@ -506,65 +671,6 @@
       </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="section section--alt" id="pricing" aria-labelledby="pricing-title">
-      <div class="container">
-        <div class="section__head">
-          <p class="kicker">Pricing</p>
-          <h2 id="pricing-title">Founding pricing</h2>
-          <p class="section__sub">Culpritly is in early access. Founding stores help shape it.</p>
-        </div>
-
-        <div class="pricing">
-          <article class="plan plan--founding" aria-labelledby="plan-founding">
-            <div class="plan__top">
-              <h3 id="plan-founding">Founding plan</h3>
-              <span class="plan__badge">First 10 stores only</span>
-            </div>
-            <p class="plan__price"><span class="plan__amount">$49</span><span class="plan__per">/month</span></p>
-            <ul class="checklist">
-              <li>Everything in the product, including email and Slack alerts</li>
-              <li>Price locked for as long as you stay subscribed</li>
-              <li>Month to month, cancel any time</li>
-              <li>Free breakage replay before you commit</li>
-              <li>Your feedback shapes what gets built next</li>
-            </ul>
-            <a class="btn btn--primary btn--block" href="https://35-253-165-3.sslip.io/signup" aria-describedby="plan-terms">Start free trial</a>
-            <ul class="plan__terms" id="plan-terms">
-              <li>The 14 day trial needs no card and never turns into a paid plan by itself. Nothing is charged unless you subscribe.</li>
-              <li><strong>$49 per month</strong>, billed monthly in advance. Taxes, if any, are added at checkout.</li>
-              <li>Renews automatically every month until you cancel.</li>
-              <li>Cancel any time in the app (Billing, then Manage billing). Access continues to the end of the paid period.</li>
-              <li>Refunds: ask within 14 days of your first payment for a full refund. Later months are not refunded.</li>
-              <li>Payments are handled by Lemon Squeezy. See the <a href="https://35-253-165-3.sslip.io/terms" rel="noopener">terms</a>.</li>
-            </ul>
-          </article>
-
-          <div class="planned">
-            <h3 class="planned__title">Planned regular pricing</h3>
-            <p class="planned__note">Planned, and subject to change.</p>
-            <ul class="planned__list">
-              <li class="planned__row">
-                <span class="planned__name">Store</span>
-                <span class="planned__desc">1 store</span>
-                <span class="planned__price">$49<span>/mo</span></span>
-              </li>
-              <li class="planned__row">
-                <span class="planned__name">Growth</span>
-                <span class="planned__desc">3 stores + Slack alerts</span>
-                <span class="planned__price">$99<span>/mo</span></span>
-              </li>
-              <li class="planned__row">
-                <span class="planned__name">Agency</span>
-                <span class="planned__desc">10 stores + client reports</span>
-                <span class="planned__price">$149<span>/mo</span></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- About -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="container">
@@ -583,65 +689,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
-      <div class="container container--narrow">
-        <div class="section__head">
-          <p class="kicker">FAQ</p>
-          <h2 id="faq-title">Questions site owners ask</h2>
-        </div>
-        <div class="faq">
-          <details>
-            <summary><h3>What does the AI actually do?</h3></summary>
-            <p>It explains incidents. When checkout breaks, it reads the error messages, the changelog and code diff of whatever changed, and your store's timeline, then writes a plain-English explanation of the likely cause and suggests a fix. It does not take actions on its own. Every suggestion shows the evidence it is based on, and you approve anything that changes your store.</p>
-          </details>
-          <details>
-            <summary><h3>Does Culpritly slow my site down?</h3></summary>
-            <p>It is built not to. The connector plugin is lightweight and sends small batches of events in the background. It adds no front-end scripts to your site except a tiny error listener on checkout and other payment pages, so Culpritly can see the JavaScript errors your customers run into.</p>
-          </details>
-          <details>
-            <summary><h3>What data does Culpritly collect?</h3></summary>
-            <p>Change events (what was updated or changed, and when), error messages from checkout and other payment pages, and order counts and totals so Culpritly can learn your store's normal pace. No card data, ever, and no customer personal data beyond what is needed to do the job. To write AI explanations, error messages, change events and relevant public plugin code are sent to an AI provider for analysis. The <a href="privacy.html">privacy page</a> has the details.</p>
-          </details>
-          <details>
-            <summary><h3>Will Culpritly roll things back automatically?</h3></summary>
-            <p>No. Every alert explains how to undo the change, and a rollback only happens when you confirm it. Rollback is never offered for WooCommerce core or for updates that changed your database, because reversing those safely needs a person's judgment. For those, the alert explains how to recover.</p>
-          </details>
-          <details>
-            <summary><h3>Which payment gateways does Culpritly support?</h3></summary>
-            <p>Culpritly is starting with Stripe, WooPayments and PayPal. It also notices when the Stripe, PayPal, Braintree or Square payment script fails to load on a payment page. More gateways are planned.</p>
-          </details>
-          <details>
-            <summary><h3>Does it only work with WooCommerce?</h3></summary>
-            <p>No. Culpritly watches WooCommerce checkout and cart, the payment pages of Restrict Content Pro, MemberPress and Paid Memberships Pro, and any page you mark as a payment page in the plugin settings. Change tracking, error alerts and slowness alerts work on any WordPress site. Order revenue estimates currently need WooCommerce.</p>
-          </details>
-          <details>
-            <summary><h3>Does Culpritly work with Shopify?</h3></summary>
-            <p>Not yet. Culpritly is for WordPress sites for now: WooCommerce stores and membership sites. Shopify support is planned for later.</p>
-          </details>
-          <details>
-            <summary><h3>How is this different from an activity log or an uptime monitor?</h3></summary>
-            <p>An activity log records changes. An uptime monitor checks whether your site is up. Neither tells you that checkout quietly stopped working, which change caused it, or why. Culpritly connects your store's changes to checkout breakage and to the revenue it is costing you, and its AI incident analyst explains the cause in plain English with the evidence. The upcoming update risk check goes one step earlier and flags risky updates before you install them.</p>
-          </details>
-          <details>
-            <summary><h3>Is Culpritly ready today?</h3></summary>
-            <p>Culpritly is in early access. Founding stores get the free breakage replay first, then the product as each part ships, at a price that stays locked while they are subscribed.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="section cta-band" aria-labelledby="cta-title">
-      <div class="container cta-band__inner">
-        <h2 id="cta-title">See what Culpritly would have caught on your store</h2>
-        <p>Twenty minutes, your real change history, no obligation.</p>
-        <div class="hero__ctas hero__ctas--center">
-          <a class="btn btn--primary btn--lg" href="https://35-253-165-3.sslip.io/signup">Start free 14-day trial</a>
-          <a class="btn btn--ghost btn--lg" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">

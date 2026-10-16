@@ -1606,3 +1606,16 @@ a:hover {
 .proof strong{display:block;font-size:2rem;letter-spacing:-.02em;color:var(--accent-text);line-height:1.1}
 .proof span{display:block;margin-top:6px;color:var(--text-muted);font-size:.95rem}
 @media (min-width:820px){.proof{grid-template-columns:repeat(4,1fr)}}
+
+/* Product showcase */
+.showcase{list-style:none;padding:0;display:grid;gap:56px}
+.showcase__item{display:grid;gap:22px;align-items:center}
+.showcase__text h3{font-size:1.5rem;margin:10px 0 8px;letter-spacing:-.01em}
+.showcase__text p{color:var(--text-muted)}
+.showcase__shot{margin:0}
+.showcase__shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.showcase__shot figcaption{margin-top:10px;font-size:.85rem;color:var(--text-muted)}
+.proofline{margin-top:48px;text-align:center;color:var(--text-muted)}
+.proofline strong{color:var(--text)}
+@media (min-width:900px){.showcase__item{grid-template-columns:5fr 7fr;gap:48px}.showcase__item--flip .showcase__text{order:2}}
+@media (min-width:900px){.showcase__item--flip{grid-template-columns:7fr 5fr}}
