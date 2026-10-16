@@ -160,69 +160,32 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Watches every payment page: WooCommerce, memberships, courses</p>
-          <h1 id="hero-title">Something broke your store. <span class="hero__accent">Culpritly tells you what, when, and what it cost.</span></h1>
-          <p class="lede">Culpritly watches whether customers can still pay on your WooCommerce checkout and membership signups. When payments quietly break, it tells you what changed, what it cost, and what to try first.</p>
-          <div class="hero__ctas">
-            <a class="btn btn--primary" href="https://35-253-165-3.sslip.io/signup">Start free 14-day trial</a>
-            <a class="btn btn--ghost" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Or get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
-          </div>
-          <p class="hero__note">No card needed &bull; Install in about 5 minutes &bull; Nothing changes without your OK &bull; Built by a WooCommerce engineer</p>
+    <section class="hero2" aria-labelledby="hero-title">
+      <div class="hero2__mesh" aria-hidden="true"></div>
+      <div class="container hero2__inner">
+        <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>For WooCommerce stores and membership sites</p>
+        <h1 id="hero-title">Something broke your store.<span class="hl">Find out what, when, and what it cost.</span></h1>
+        <p class="lede">Culpritly watches whether customers can still pay. When checkout quietly breaks, it tells you what changed, what it cost, and what to try first.</p>
+        <div class="hero__ctas hero__ctas--center">
+          <a class="btn btn--primary btn--lg" href="https://35-253-165-3.sslip.io/signup">Start free 14-day trial</a>
+          <a class="btn btn--ghost btn--lg" href="https://calendly.com/faisalalvi33/new-meeting" target="_blank" rel="noopener">Or get a free breakage replay<span class="visually-hidden"> (opens Calendly in a new tab)</span></a>
         </div>
+        <p class="hero__note">No card needed &bull; Install in about 5 minutes &bull; Nothing changes without your OK</p>
 
-        <figure class="incident" aria-labelledby="incident-caption">
-          <div class="incident__bar">
-            <span class="incident__status"><span class="pulse" aria-hidden="true"></span>Checkout incident</span>
-            <span class="incident__tag">Example</span>
-          </div>
+        <div class="stage">
+          <figure class="stage__main">
+            <img src="assets/img/app-incident.jpg" width="1440" height="1000" alt="Culpritly incident page showing a broken checkout, the likely culprit, the estimated cost and safe next steps.">
+          </figure>
+          <div class="float float--alert" aria-hidden="true"><span class="pulse"></span><div><small>Checkout incident</small><strong>Customers could not complete checkout</strong></div></div>
+          <div class="float float--cost" aria-hidden="true"><small>Estimated cost so far</small><strong>$1,840</strong></div>
+          <div class="float float--culprit" aria-hidden="true"><small>Likely culprit</small><strong>Checkout Tracking 2.0.3</strong><em>High confidence</em></div>
+          <div class="float float--step" aria-hidden="true"><small>Safe first step</small><strong>Roll back to 2.0.2</strong><em>Nothing changes until you confirm</em></div>
+        </div>
+        <p class="stage__cap">Example with made-up data, from a replay of a real public plugin incident.</p>
 
-          <ol class="timeline">
-            <li class="timeline__row timeline__row--change">
-              <time class="timeline__time" datetime="03:04">03:04</time>
-              <span class="timeline__kind">Change</span>
-              <span class="timeline__text">Plugin "Checkout Tracking" updated 2.0.2 &rarr; 2.0.3</span>
-            </li>
-            <li class="timeline__row timeline__row--error">
-              <time class="timeline__time" datetime="03:06">03:06</time>
-              <span class="timeline__kind">Error</span>
-              <span class="timeline__text">JavaScript error on /checkout/ (Stripe payment form)</span>
-            </li>
-            <li class="timeline__row timeline__row--orders">
-              <time class="timeline__time" datetime="03:10">03:10</time>
-              <span class="timeline__kind">Orders</span>
-              <span class="timeline__text">Orders per hour: 14 &rarr; 0</span>
-            </li>
-          </ol>
-
-          <div class="spark" aria-hidden="true">
-            <span style="--h:62%"></span><span style="--h:70%"></span><span style="--h:58%"></span><span style="--h:74%"></span><span style="--h:66%"></span><span style="--h:78%"></span><span style="--h:69%"></span><span style="--h:72%"></span><span class="is-zero"></span><span class="is-zero"></span><span class="is-zero"></span><span class="is-zero"></span>
-          </div>
-
-          <div class="verdict">
-            <div class="verdict__item">
-              <p class="verdict__label">Likely culprit</p>
-              <p class="verdict__value">Checkout Tracking 2.0.3 <span class="pill">High confidence</span></p>
-            </div>
-            <div class="verdict__item">
-              <p class="verdict__label">Estimated lost revenue so far</p>
-              <p class="verdict__money">$1,840</p>
-            </div>
-            <div class="verdict__item verdict__item--wide">
-              <p class="verdict__label">AI analysis</p>
-              <p class="verdict__analysis">Version 2.0.3 now loads its checkout script before Stripe's card field is ready, so the field never renders. Roll back to 2.0.2 or update once a fix ships.</p>
-            </div>
-          </div>
-
-          <div class="incident__actions">
-            <span class="mock-btn" aria-hidden="true">Review rollback</span>
-            <span class="incident__hint">Nothing changes without your OK</span>
-          </div>
-
-          <figcaption id="incident-caption" class="incident__caption">Example alert with made-up data, to show what Culpritly sends. Not a real store.</figcaption>
-        </figure>
+        <ul class="works" aria-label="Works with">
+          <li>WooCommerce</li><li>Stripe</li><li>PayPal</li><li>WooPayments</li><li>Square</li><li>Braintree</li><li>MemberPress</li><li>Restrict Content Pro</li><li>Paid Memberships Pro</li>
+        </ul>
       </div>
     </section>
 
