@@ -1324,6 +1324,10 @@ a:hover {
   margin-top: 8px;
 }
 
+.about__cta {
+  margin-top: 20px;
+}
+
 @media (max-width: 640px) {
   .about {
     grid-template-columns: 1fr;
