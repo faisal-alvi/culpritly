@@ -78,7 +78,10 @@
         return 'body';
     }
     function label(el) {
-        return (el.textContent || el.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim().slice(0, 40);
+        // Skip the visually hidden "(opens in a new tab)" text that screen readers get.
+        var c = el.cloneNode(true);
+        Array.prototype.forEach.call(c.querySelectorAll('.visually-hidden'), function (n) { n.remove(); });
+        return (c.textContent || el.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim().slice(0, 40);
     }
     function clientId() {
         var m = document.cookie.match(/(?:^|;\s*)_ga=GA\d\.\d\.(\d+\.\d+)/);
