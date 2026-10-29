@@ -1545,7 +1545,7 @@ a:hover {
 
 @media (max-width: 380px) {
   :root {
-    --gutter: 16px;
+    --gutter: 20px;
   }
 
   .incident {
@@ -1684,3 +1684,5 @@ a:hover {
 @media (max-width:859px){.features{gap:14px}.features .feature{padding:24px 22px}}
 
 #hands-on .hands__cta { margin-top: 32px; }
+
+.page .container { padding-inline: max(var(--gutter), 24px); }
