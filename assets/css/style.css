@@ -1219,6 +1219,13 @@ a:hover {
   line-height: 1;
 }
 
+.plan__regular {
+  margin-right: 6px;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 .plan__per {
   color: var(--text-muted);
 }
