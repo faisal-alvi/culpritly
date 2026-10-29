@@ -1227,6 +1227,44 @@ a:hover {
   margin-bottom: 26px;
 }
 
+.plan__was {
+  margin: 8px 0 18px;
+  color: var(--text-muted);
+  font-size: 0.925rem;
+}
+
+.guarantee {
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+}
+
+.guarantee h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.guarantee p {
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.guarantee p + p {
+  margin-top: 8px;
+}
+
+.planned__price del {
+  margin-right: 6px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.planned__note + .planned__list + .planned__note {
+  margin-top: 14px;
+}
+
 .plan__terms {
   margin: 14px 0 0;
   padding: 0;
