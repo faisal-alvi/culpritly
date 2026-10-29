@@ -2,7 +2,7 @@
 
 Static pre-sell landing page for Culpritly, built for GitHub Pages.
 
-Plain HTML and CSS. No build step, no frameworks, no trackers, no font CDN. The only scripts are a few inline lines (theme toggle, and the home links in `404.html`).
+Plain HTML and CSS. No build step, no frameworks, no font CDN. Scripts: a few inline lines (theme toggle, home links in `404.html`), `assets/js/reveal.js`, and `assets/js/analytics.js` (GA4, see below).
 
 ## Files
 
@@ -11,6 +11,7 @@ index.html            Landing page (with SoftwareApplication + FAQPage JSON-LD)
 privacy.html          Privacy page
 404.html              Not found page, fully self-contained (inline CSS and logo)
 assets/css/style.css  All styles (dark by default, light via prefers-color-scheme)
+assets/js/analytics.js  GA4 events, Consent Mode v2, EU consent banner
 assets/img/           Logo mark, favicon, Open Graph image
 assets/fonts/         Inter and JetBrains Mono (variable, latin subset, woff2) with their SIL OFL 1.1 license files
 robots.txt            Allows all crawlers, points to the sitemap
@@ -116,3 +117,11 @@ that leave it are ones a visitor clicks: the app sign up and terms pages (the Cu
 Calendly (booking a call), LinkedIn and faisalalvi.com (about the founder). GitHub Pages serves the files
 and may keep standard server logs. No cookies are set and nothing is stored beyond a light/dark
 preference in the browser's local storage.
+
+## Analytics
+
+`assets/js/analytics.js` sends GA4 events to the faisalalvi.com property (`G-7JH7HHRTV6`), every event tagged `product=culpritly`. Only faisalalvi.com loads gtag.js; other hosts log to the console. EEA, UK and CH start with analytics denied (Consent Mode v2), and the Accept / Decline banner shows for European time zones. Add `?consent=show` to force it.
+
+Events: `click_signup` (key event), `click_book_call` (key event), `click_hands_on`, `click_email`, `click_login`, `click_app_page`, `click_founder_site`, `click_linkedin`, `click_nav`, `view_product`, `view_how_it_works`, `view_features`, `view_pricing`, `view_hands_on`, `view_faq`, `view_real_case`, `view_replay_offer`, `scroll_depth` (25/50/75/100), `faq_open`, `tour_video_play`, `tour_video_complete`. Parameters: `cta_location` (nav, hero, cta_band, pricing, hands-on, replay, footer, ...), `cta_text`, `page_type`, `product`.
+
+Sign-up links to the app get `ga_cid` (the visitor's GA client ID, only if the `_ga` cookie exists) and `cta` so the app can send `sign_up` and `purchase` server-side against the same visit.
